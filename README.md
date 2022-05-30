@@ -19,3 +19,16 @@ for file in files:
             
 df_total.to_excel(r'C:\Users\Sochi\Downloads\ordersB\combined_file.xlsx')
 
+correct one
+import pandas as pd
+
+data = pd.read_excel(r'C:\Users\Sochi\Downloads\juneorder\ppmvjune.xlsx', sheet_name= None)
+
+df = pd.DataFrame()
+
+for name, frame in data.items():
+    frame['sheet'] = name
+    df = df.append(frame)
+
+print(df)
+df.to_excel(r'C:\Users\Sochi\Downloads\process.xlsx')
